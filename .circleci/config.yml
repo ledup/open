@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: koalaman/shellcheck:stable
+    steps:
+      - checkout
+      - run:
+          name: Shellcheck
+          command: find . -type f -name '*.sh' | xargs shellcheck
