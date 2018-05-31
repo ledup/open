@@ -62,7 +62,7 @@ open_plugin() {
 
     for key in $(_config_get_keys "${prefix}" true); do
       if [[ "$name" == true ]]; then
-        echo "$key"
+      echo "$key"
       else
         print_padded "$key" "$(_config_get_value "${prefix}${key}")"
       fi
@@ -92,7 +92,7 @@ open_plugin() {
     fi
   else
     # set the bookmark
-    _config_set_value "${key}" "${bookmark_url}" -l "${level}"
+    _config_set_value ${key} "${bookmark_url}" -l "${level}"
   fi
 
 }
